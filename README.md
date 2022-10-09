@@ -33,7 +33,7 @@ $ docker compose up -d
 ```  
 
 ## 環境変数
-・・  
+VERCEL_TOKEN  
 
 ## 参考記事
 ・・  
