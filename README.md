@@ -11,12 +11,13 @@ Tailwind CSS "3.1.8"
 Jest "29.1.2"  
 Docker  
 docker-compose  
+Vercel  
+CircleCI  
 
 ## 注意点  
 このアプリの起動には以下が必要です。  
 ・docker環境  
-・next-env.d.ts（Next.jsが提供するコンポーネントの型情報ファイル）  
-・yarnのインストール 
+・yarnのインストール  
 
 ## 使い方  
 ①（初回のみ）yarnインストール用のコマンド  
@@ -32,7 +33,7 @@ $ docker compose up -d
 ```  
 
 ## 環境変数
-・・  
+VERCEL_TOKEN  
 
 ## 参考記事
 ・・  
