@@ -11,6 +11,8 @@ Tailwind CSS "3.1.8"
 Jest "29.1.2"  
 Docker  
 docker-compose  
+Vercel  
+CircleCI  
 
 ## 注意点  
 このアプリの起動には以下が必要です。  
