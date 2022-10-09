@@ -27,8 +27,8 @@ jobs:
           name: jestの実行
           command: docker compose run --rm front yarn test
 
-# デプロイ用のジョブ
-deploy:
+  # デプロイ用のジョブ
+  deploy:
     # docker compose　を利用するため、仮想マシンを利用する。（最新版のimageは下記URLを参照）
     # See: https://circleci.com/docs/ja/configuration-reference#available-linux-machine-images
     machine:
