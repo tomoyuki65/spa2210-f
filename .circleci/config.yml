@@ -34,7 +34,7 @@ jobs:
     machine:
       image: ubuntu-2204:current
     # 作業用のディレクトリを設定
-    working_directory: ~/deploy_vercel
+    working_directory: ~/spa2210-f
     steps:
       # リポジトリを作業用のディレクトリにpull
       - checkout
