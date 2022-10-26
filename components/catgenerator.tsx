@@ -1,7 +1,7 @@
 /* 「猫画像ジェネレーター」のコンポーネント */
 
-import { useState } from "react";
-import FetchCatImage from "../components/fetchcatimage";
+import { useState } from "react"
+import FetchCatImage from "../components/fetchcatimage"
 
 interface CatGeneratorProps {
   initialCatImageUrl: string;

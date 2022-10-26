@@ -1,30 +1,37 @@
 /* Homeページ */
 
-import type { NextPage, GetServerSideProps } from "next";
-import CatGenerator from "../components/catgenerator";
-import FetchCatImage from "../components/fetchcatimage";
+import type { NextPageWithLayout } from "./_app"
+import Layout from "../components/layout"
+import Head from 'next/head'
+import LikeButton from "../components/likebutton"
+import CatImageFile from "../components/CatImageFile"
 
-interface HomeProps {
-  initialCatImageUrl: string;
+const headInfo = {
+  title: "SPA App with Next.js",
+  desctiption: "Next.jsで作成したSPA構成のアプリケーション",
 };
 
-const Home: NextPage<HomeProps> = ({ initialCatImageUrl }) => {
+const Home: NextPageWithLayout = () => {
   return (
-    <CatGenerator initialCatImageUrl={initialCatImageUrl} />
+    <>
+      <Head>
+        <title>{ headInfo.title }</title>
+        <meta name="description" content={ headInfo.desctiption } />
+      </Head>
+      <div className="h-screen w-screen flex flex-col justify-center items-center">
+        <CatImageFile />
+        <p className="m-3">Please click this like button!</p>
+        <LikeButton />
+      </div>
+    </>
   );
 };
 
+// ページ単位のLayout設定
+Home.getLayout = (page) => (
+  <Layout>
+    {page}
+  </Layout>
+);
+
 export default Home;
-
-// SSR処理（猫画像URLを取得）
-export const getServerSideProps: GetServerSideProps<
-  HomeProps
-> = async () => {
-  const catImage = await FetchCatImage();
-
-  return {
-    props: {
-      initialCatImageUrl: catImage.url,
-    },
-  };
-};
