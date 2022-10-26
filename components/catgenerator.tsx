@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import FetchCatImage from "../components/fetchcatimage"
+import Image from 'next/image'
 
 interface CatGeneratorProps {
   initialCatImageUrl: string;
@@ -23,7 +24,7 @@ const CatGenerator = (props: CatGeneratorProps) => {
         きょうのにゃんこ🐱
       </button>
       <div>
-        <img src={catImageUrl} width={500} height="auto" />
+        <Image src={catImageUrl} alt="catImage" width={500} height="auto" />
       </div>
     </div>
   )

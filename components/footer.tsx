@@ -1,6 +1,6 @@
 import { memo } from "react"
 
-const Footer = memo(() => {
+const Footer = memo( function FooterMemo() {
   return (
     <footer>
       <nav className="flex items-center justify-center flex-wrap p-6 mt-3">
