@@ -1,7 +1,7 @@
 import { memo } from "react"
 import Link from 'next/link'
 
-const Header = memo(() => {
+const Header = memo( function HeaderMemo() {
   return (
     <header>
       <nav className="flex items-center justify-between flex-wrap bg-slate-800 p-6">
@@ -23,7 +23,7 @@ const Header = memo(() => {
         </div>
       </nav>
     </header>
-  )
+  );
 });
 
 export default Header;
