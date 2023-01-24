@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import Head from 'next/head'
 import LikeButton from "../components/likebutton"
 import CatImageFile from "../components/CatImageFile"
+import DogImageFile from "../components/DogImageFile"
+import { useAuthContext } from "../context/AuthContext"
 
 const headInfo = {
   title: "SPA App with Next.js",
@@ -12,6 +14,9 @@ const headInfo = {
 };
 
 const Home: NextPageWithLayout = () => {
+  // ログイン状況を取得
+  const { currentUser } = useAuthContext();
+
   return (
     <>
       <Head>
@@ -19,7 +24,8 @@ const Home: NextPageWithLayout = () => {
         <meta name="description" content={ headInfo.desctiption } />
       </Head>
       <div className="h-screen w-screen flex flex-col justify-center items-center">
-        <CatImageFile />
+        { !currentUser && <CatImageFile /> }
+        { currentUser && <DogImageFile /> }
         <p className="m-3">Please click this like button!</p>
         <LikeButton />
       </div>

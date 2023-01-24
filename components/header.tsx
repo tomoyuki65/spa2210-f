@@ -1,7 +1,11 @@
 import { memo } from "react"
 import Link from 'next/link'
+import { useAuthContext } from "../context/AuthContext"
 
 const Header = memo( function HeaderMemo() {
+  // ログイン状況を取得
+  const { currentUser, logout } = useAuthContext();
+
   return (
     <header>
       <nav className="flex items-center justify-between flex-wrap bg-slate-800 p-6">
@@ -18,7 +22,8 @@ const Header = memo( function HeaderMemo() {
             <Link href="/about"><a>About</a></Link>
           </span>
           <span className="text-base tracking-tight">
-            <Link href="#"><a>Log in</a></Link>
+            {!currentUser && <Link href="/login"><a>Log in</a></Link>}
+            {currentUser && <button onClick={logout}>Log out</button>}
           </span>
         </div>
       </nav>
