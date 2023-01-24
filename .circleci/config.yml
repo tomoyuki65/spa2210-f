@@ -149,7 +149,6 @@ jobs:
       # vercelへのデプロイ処理
       - run:
           name: yarn deploy
-          #command: docker compose run --rm front yarn deploy
           command: yarn deploy
 
 # Invoke jobs via workflows
